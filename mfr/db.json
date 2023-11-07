@@ -1,0 +1,29 @@
+{
+    "trips": [
+      {
+        "id": 1,
+        "tripType": "Long Trip"
+      }
+      
+    ],
+    "luggages": [
+      {
+        "tripId": 1,
+        "title": "Carry-on Bag",
+        "id": 11
+      },
+      {
+        "tripId": 1,
+        "title": "checked-in luggage",
+        "id": 12
+      }
+      
+    ],
+    "items": [
+      {
+        "luggageId": 11,
+        "name": "meds",
+        "id": 1
+      }
+    ]
+  }
