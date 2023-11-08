@@ -18,7 +18,7 @@ function TripList () {
     console.log(error)
     content = <div>Error loading trips</div>
   } else {
-    content = data.map((trip) => {
+    content = data.map(trip => {
       return <TripListItem key={trip.id} trip={trip} />
     });
   }

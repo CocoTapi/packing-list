@@ -7,8 +7,31 @@
     {
       "name": "Awesome Fresh Chair",
       "id": 3
+    },
+    {
+      "name": "Recycled Concrete Mouse",
+      "id": 4
+    },
+    {
+      "name": "Licensed Fresh Bacon",
+      "id": 5
+    },
+    {
+      "name": "Refined Soft Bacon",
+      "id": 6
     }
   ],
-  "luggages": [],
-  "items": []
+  "luggages": [
+    {
+      "tripId": 2,
+      "title": "Small Soft Salad",
+      "id": 1
+    }
+  ],
+  "items": [
+    {
+      "luggageId": 2,
+      "id": 1
+    }
+  ]
 }
