@@ -1,10 +1,10 @@
 {
-    "trips": [
-        {
-        "id": 1,
-        "name": "Japan Trip"
-        }
-    ],
-    "luggages": [],
-    "items": []
+  "trips": [
+    {
+      "id": 1,
+      "name": "Japan Trip"
+    }
+  ],
+  "luggages": [],
+  "items": []
 }

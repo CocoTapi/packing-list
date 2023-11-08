@@ -2,22 +2,25 @@ import { useFetchTripsQuery, useAddTripMutation } from "../store";
 import Button from "./Button";
 import TripListItem from './TripListItem'
 
-function TripList ({ trip }) {
-  const { data, error, isFetching } = useFetchTripsQuery(trip);
+function TripList () {
+  const { data, error, isFetching } = useFetchTripsQuery();
 
   const [addTrip, results] = useAddTripMutation();
 
   const handleAddTrip = () => {
-    addTrip(trip);
+    addTrip();
   };
 
   let content;
   if (isFetching) {
     content = <div>Loading</div>
   } else if (error) {
+    console.log(error)
     content = <div>Error loading trips</div>
   } else {
-    return <TripListItem key={trip.id} trip={trip}/>
+    content = data.map((trip) => {
+      return <TripListItem key={trip.id} trip={trip} />
+    });
   }
 
   return (

@@ -28,12 +28,12 @@ const tripsApi = createApi({
                 //     tags.push({type: 'UsersAlbums', id: user.id});
                 //     return tags;
                 // },
-                query: (trip) => {
+                query: () => {
                     return {
                         url: '/trips',
-                        params: {
-                            id: trip.id,
-                        },
+                        // params: {
+                        //     id: trip.id,
+                        // },
                         method: 'GET'
                     }
                 }
@@ -42,13 +42,12 @@ const tripsApi = createApi({
                 // invalidatesTags: (result, error, user) => {
                 //     return [{ type: 'UsersAlbums', id: user.id }]
                 // },
-                query: (trip) => {
+                query: () => {
                     return {
                         url: 'trips',
                         method: 'POST',
                         body: {
-                            tripId: trip.id,
-                            title: faker.commerce.productName(),
+                            name: faker.commerce.productName(),
                         }
                     }
                 }
