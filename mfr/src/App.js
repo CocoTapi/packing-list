@@ -1,8 +1,9 @@
+import TripList from "./components/TripList";
+
 function App() {
   return (
-    <div>
-      <h1>Packing List</h1>
-      
+    <div className="container mx-auto">
+      <TripList />
     </div>
   );
 }
