@@ -1,6 +1,7 @@
 import { useFetchTripsQuery, useAddTripMutation } from "../store";
 import Button from "./Button";
 import TripListItem from './TripListItem'
+import InputForm from "./InputForm";
 
 function TripList () {
   const { data, error, isFetching } = useFetchTripsQuery();
@@ -32,6 +33,7 @@ function TripList () {
         </Button>
       </div>
         {content}
+        <InputForm />
     </div>
     )
 }

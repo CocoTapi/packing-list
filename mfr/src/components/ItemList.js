@@ -2,6 +2,7 @@ import { useFetchItemsQuery, useAddItemMutation } from "../store";
 import Button from "./Button";
 //import Skeleton from "./Skeleton";
 import ItemListItem from "./ItemListItem";
+import { GoPlus } from "react-icons/go";
 
 function ItemsList ({ luggage }) {
     const {data, isFetching, error} = useFetchItemsQuery(luggage);
@@ -27,7 +28,7 @@ function ItemsList ({ luggage }) {
             <div className="m-2 flex flex-row items-center juctify-between">
                 <h3 className="text-lg font-bold">Items In {luggage.title}</h3>
                 <Button loading={results.isLoading} onClick={handleAddItem}>
-                    + Add Item
+                    <GoPlus />
                 </Button>
             </div>
            {content}

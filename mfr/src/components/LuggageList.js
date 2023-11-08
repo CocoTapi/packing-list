@@ -1,4 +1,5 @@
 import { useFetchLuggageQuery, useAddLuggageMutation } from "../store";
+import { GoPlus } from "react-icons/go";
 //import Skeleton from './Skeleton';
 import Button from './Button';
 import LuggageListItem from "./LuggageListItem";
@@ -29,7 +30,7 @@ function LuggageList({ trip }) {
     <div>
       <div className="m-2 flex flex-row items-center justify-between">
         <h3 className="text-lg font-bold">Luggages for {trip.name}</h3>
-        <Button onClick={handleAddLuggage} loading={results.isLoading}>+ Add Luggage</Button>
+        <Button onClick={handleAddLuggage} loading={results.isLoading}><GoPlus /></Button>
       </div>
       {content}
     </div>

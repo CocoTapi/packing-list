@@ -11,14 +11,13 @@
     {
       "name": "Recycled Concrete Mouse",
       "id": 4
+    },
+    {
+      "name": "Practical Bronze Ball",
+      "id": 5
     }
   ],
   "luggages": [
-    {
-      "tripId": 2,
-      "title": "Handcrafted Bronze Chips",
-      "id": 3
-    },
     {
       "tripId": 2,
       "title": "Unbranded Cotton Computer",
@@ -28,18 +27,18 @@
       "tripId": 2,
       "title": "Refined Plastic Hat",
       "id": 5
+    },
+    {
+      "tripId": 2,
+      "title": "Recycled Metal Salad",
+      "id": 6
     }
   ],
   "items": [
     {
-      "luggageId": 3,
-      "entry": "Handcrafted Rubber Pants",
+      "luggageId": 4,
+      "entry": "Awesome Metal Mouse",
       "id": 1
-    },
-    {
-      "luggageId": 3,
-      "entry": "Recycled Frozen Fish",
-      "id": 2
     }
   ]
 }
