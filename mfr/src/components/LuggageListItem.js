@@ -23,7 +23,7 @@ function LuggageListItem({ luggage }) {
 
 
     return (
-    <ExpandablePanel key={luggage.id} header={header}>
+    <ExpandablePanel key={luggage.id} header={header} bgColor="bg-blue-100">
         <ItemList luggage={luggage}/>
     </ExpandablePanel>
     )
