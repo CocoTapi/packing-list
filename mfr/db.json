@@ -43,6 +43,10 @@
     {
       "luggageId": 2,
       "id": 2
+    },
+    {
+      "luggageId": 1,
+      "id": 3
     }
   ]
 }

@@ -27,12 +27,10 @@ function ItemsList ({ luggage }) {
             <div className="m-2 flex flex-row items-center juctify-between">
                 <h3 className="text-lg font-bold">Items In {luggage.title}</h3>
                 <Button loading={results.isLoading} onClick={handleAddItem}>
-                    + Add Photo
+                    + Add Item
                 </Button>
             </div>
-            <div className="mx-8 flex flex-row flex-wrap justify-center">
-                {content}
-            </div>
+           {content}
         </div>
     )
 }
