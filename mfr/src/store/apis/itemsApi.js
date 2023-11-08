@@ -36,7 +36,7 @@ const itemsApi = createApi({
                         url: '/items',
                         body: {
                             luggageId: luggage.id,
-                            itemName: faker.string.uuid
+                            entry: faker.commerce.productName()
                         }
                     }
                 }

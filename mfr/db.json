@@ -16,16 +16,6 @@
   "luggages": [
     {
       "tripId": 2,
-      "title": "Small Soft Salad",
-      "id": 1
-    },
-    {
-      "tripId": 2,
-      "title": "handbag",
-      "id": 2
-    },
-    {
-      "tripId": 2,
       "title": "Handcrafted Bronze Chips",
       "id": 3
     },
@@ -33,20 +23,18 @@
       "tripId": 2,
       "title": "Unbranded Cotton Computer",
       "id": 4
+    },
+    {
+      "tripId": 2,
+      "title": "Refined Plastic Hat",
+      "id": 5
     }
   ],
   "items": [
     {
-      "luggageId": 2,
+      "luggageId": 3,
+      "entry": "Handcrafted Rubber Pants",
       "id": 1
-    },
-    {
-      "luggageId": 2,
-      "id": 2
-    },
-    {
-      "luggageId": 1,
-      "id": 3
     }
   ]
 }
