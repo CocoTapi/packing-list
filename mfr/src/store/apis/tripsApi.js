@@ -21,13 +21,12 @@ const tripsApi = createApi({
     endpoints(builder) {
         return {
             fetchTrips: builder.query({
-                // providesTags: (result, error, user) => {
-                //     const tags = result.map(album => {
-                //         return { type:'Trip', id: album.id}
-                //     });
-                //     tags.push({type: 'UsersAlbums', id: user.id});
-                //     return tags;
-                // },
+                providesTags: (result, error, trip) => {
+                    const tags = result.map(trip => {
+                        return { type:'Trip', id: trip.id}
+                    });
+                    return tags;
+                },
                 query: () => {
                     return {
                         url: '/trips',
@@ -39,9 +38,9 @@ const tripsApi = createApi({
                 }
             }),
             addTrip: builder.mutation({
-                // invalidatesTags: (result, error, user) => {
-                //     return [{ type: 'UsersAlbums', id: user.id }]
-                // },
+                invalidatesTags: (result, error, trip) => {
+                    return [{ type: 'Trip', id: trip.id }]
+                },
                 query: () => {
                     return {
                         url: 'trips',
@@ -53,9 +52,9 @@ const tripsApi = createApi({
                 }
             }),
             removeTrip: builder.mutation({
-                // invalidatesTags: (result, error, album) => {
-                //     return [{ type: 'Album', id: album.id }]
-                // },
+                invalidatesTags: (result, error, trip) => {
+                    return [{ type: 'Trip', id: trip.id }]
+                },
                 query: (trip) => {
                     return {
                         url: `/trips/${trip.id}`,

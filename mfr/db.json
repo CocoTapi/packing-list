@@ -1,5 +1,14 @@
 {
-  "trips": [],
+  "trips": [
+    {
+      "name": "Unbranded Cotton Salad",
+      "id": 2
+    },
+    {
+      "name": "Awesome Fresh Chair",
+      "id": 3
+    }
+  ],
   "luggages": [],
   "items": []
 }
