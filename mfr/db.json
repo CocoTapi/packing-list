@@ -11,14 +11,6 @@
     {
       "name": "Recycled Concrete Mouse",
       "id": 4
-    },
-    {
-      "name": "Licensed Fresh Bacon",
-      "id": 5
-    },
-    {
-      "name": "Refined Soft Bacon",
-      "id": 6
     }
   ],
   "luggages": [
@@ -26,12 +18,31 @@
       "tripId": 2,
       "title": "Small Soft Salad",
       "id": 1
+    },
+    {
+      "tripId": 2,
+      "title": "handbag",
+      "id": 2
+    },
+    {
+      "tripId": 2,
+      "title": "Handcrafted Bronze Chips",
+      "id": 3
+    },
+    {
+      "tripId": 2,
+      "title": "Unbranded Cotton Computer",
+      "id": 4
     }
   ],
   "items": [
     {
       "luggageId": 2,
       "id": 1
+    },
+    {
+      "luggageId": 2,
+      "id": 2
     }
   ]
 }

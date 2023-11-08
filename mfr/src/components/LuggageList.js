@@ -5,6 +5,7 @@ import LuggageListItem from "./LuggageListItem";
 
 function LuggageList({ trip }) {
   const { data, error, isFetching} = useFetchLuggageQuery(trip);
+  //console.log(data);
 
   const [addLuggage, results] = useAddLuggageMutation();
   //console.log(results);
@@ -30,7 +31,7 @@ function LuggageList({ trip }) {
         <h3 className="text-lg font-bold">Luggages for {trip.name}</h3>
         <Button onClick={handleAddLuggage} loading={results.isLoading}>+ Add Luggage</Button>
       </div>
-      <div>{content}</div>
+      {content}
     </div>
   );
 }

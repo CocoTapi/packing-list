@@ -30,7 +30,7 @@ const luggagesApi = createApi({
                 },
                 query: (trip) => {
                     return {
-                        url: '/trips',
+                        url: '/luggages',
                         params: {
                             tripId: trip.id,
                         },
@@ -48,7 +48,7 @@ const luggagesApi = createApi({
                         method: 'POST',
                         body: {
                             tripId: trip.id,
-                            title: faker.commerce.productName(),
+                            title: faker.commerce.productName()
                         }
                     }
                 }

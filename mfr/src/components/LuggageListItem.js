@@ -11,13 +11,16 @@ function LuggageListItem({ luggage }) {
         removeLuggage(luggage);
     };
 
-    const header = (
-      <>
-        <Button onClick={handleRemoveLuggage} loading={results.isLoading}>
+    const header =  (
+        <>
+          <Button className="mr-3" loading={results.isLoading} onClick={handleRemoveLuggage}>
             <GoTrash />
-        </Button>
-        {luggage.title}
-      </>)
+          </Button>
+          {results.error && <div>Error deleting luggage.</div>}
+          {luggage.title}
+        </>
+    ); 
+
 
     return (
     <ExpandablePanel key={luggage.id} header={header}>
