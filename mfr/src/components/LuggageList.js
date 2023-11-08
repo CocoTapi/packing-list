@@ -1,5 +1,5 @@
-function LuggageList () {
-    return 'Carry-on Bag'
+function LuggageList ({ trip }) {
+    return <div>content</div>
 }
 
 export default LuggageList;

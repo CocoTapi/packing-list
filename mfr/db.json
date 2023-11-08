@@ -1,10 +1,5 @@
 {
-  "trips": [
-    {
-      "id": 1,
-      "name": "Japan Trip"
-    }
-  ],
+  "trips": [],
   "luggages": [],
   "items": []
 }

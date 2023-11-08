@@ -52,12 +52,24 @@ const tripsApi = createApi({
                     }
                 }
             }),
+            removeTrip: builder.mutation({
+                // invalidatesTags: (result, error, album) => {
+                //     return [{ type: 'Album', id: album.id }]
+                // },
+                query: (trip) => {
+                    return {
+                        url: `/trips/${trip.id}`,
+                        method: 'DELETE',
+                    }
+                }
+            })
         }
     }
 });
 
 export const {
     useFetchTripsQuery,
-    useAddTripMutation
+    useAddTripMutation,
+    useRemoveTripMutation
 } = tripsApi;
 export { tripsApi };

@@ -16,6 +16,7 @@ setupListeners(store.dispatch);
 
 export {
     useFetchTripsQuery,
-    useAddTripMutation
+    useAddTripMutation,
+    useRemoveTripMutation
 } from './apis/tripsApi';
 
