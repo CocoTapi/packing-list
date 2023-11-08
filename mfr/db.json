@@ -35,6 +35,11 @@
       "luggageId": 3,
       "entry": "Handcrafted Rubber Pants",
       "id": 1
+    },
+    {
+      "luggageId": 3,
+      "entry": "Recycled Frozen Fish",
+      "id": 2
     }
   ]
 }
