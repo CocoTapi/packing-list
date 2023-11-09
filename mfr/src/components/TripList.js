@@ -1,3 +1,4 @@
+import { GoPlus } from "react-icons/go";
 import { useFetchTripsQuery} from "../store";
 import Button from "./Button";
 import InputForm from "./InputForm";
@@ -36,7 +37,7 @@ function TripList() {
         {/* <Button onClick={handleAddTripName} loading={results.isLoading}>
           + Add Trip
         </Button> */}
-        <Button onClick={handleShowForm}>Show</Button>
+        <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
       {content}
       {isFormVisible && <InputForm />}

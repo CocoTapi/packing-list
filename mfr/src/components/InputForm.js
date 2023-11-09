@@ -1,4 +1,4 @@
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { changeName, addTrip } from "../store/slices/tripSlice";
 import { useAddItemMutation } from "../store";
 import Button from "./Button";
@@ -13,8 +13,11 @@ function InputForm () {
         //console.log(event.target.value)
     }
 
-    const handleSubmit = (formData) => {
-        formData.preventDefault();
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const formData = {
+            tripName: event.target.elements.tripName.value
+        };
         dispatch(addTrip(formData));
     }
 
@@ -29,7 +32,8 @@ function InputForm () {
                             <label className="label">Trip Name</label>
                             <input 
                                 type="text"
-                                onChange={handleNameChange} 
+                                onChange={handleNameChange}
+                                name="tripName"
                             />
                         </div>
                         <Button loading={isLoading}>Add Trip</Button>
