@@ -5,15 +5,18 @@ const tripSlice = createSlice({
     name: 'trip',
     initialState: {},
     reducers: {
-        submitForm: async (state, action) => {
+        changeName: async (state, action) => {
+            state.name = action.payload;
+        },
+        addTrip: async (state, action) => {
             try {
-                const response = await tripsApi.submitForm(action.payload);
+                await tripsApi.submitForm(action.payload);
             } catch (error) {
                 console.log(error)
             }
-        },
+        }
     }
 });
 
-export const { submitForm } = tripSlice.actions;
+export const { changeName, addTrip } = tripSlice.actions;
 //export const carsReducer = tripSlice.reducer; 
