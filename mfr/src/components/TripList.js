@@ -1,12 +1,8 @@
 import { useFetchTripsQuery, useAddTripMutation } from "../store";
-//import { useState } from 'react';
 import Button from "./Button";
 import TripListItem from './TripListItem'
-//import InputForm from "./InputForm";
 
 function TripList () {
-  //const {showForm, setShowForm} = useState();
-
   const { data, error, isFetching } = useFetchTripsQuery();
 
   const [addTrip, results] = useAddTripMutation();
