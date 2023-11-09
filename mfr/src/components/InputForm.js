@@ -14,7 +14,7 @@ function InputForm () {
     }
 
     const handleSubmit = (formData) => {
-        formData.prevendDefault();
+        formData.preventDefault();
         dispatch(addTrip(formData));
     }
 
@@ -28,6 +28,7 @@ function InputForm () {
                         <div>
                             <label className="label">Trip Name</label>
                             <input 
+                                type="text"
                                 onChange={handleNameChange} 
                             />
                         </div>
