@@ -41,12 +41,12 @@ const tripsApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'Trip' }];
 				},
-				query: () => {
+				query: (formData) => {
 					return {
 						url: 'trips',
 						method: 'POST',
 						body: {
-							name: faker.commerce.productName(),
+							name: formData,
 						},
 					};
 				},
