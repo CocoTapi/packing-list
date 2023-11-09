@@ -1,16 +1,19 @@
 import { useFetchTripsQuery, useAddTripMutation } from "../store";
+//import { useState } from 'react';
 import Button from "./Button";
 import TripListItem from './TripListItem'
-import InputForm from "./InputForm";
+//import InputForm from "./InputForm";
 
 function TripList () {
+  //const {showForm, setShowForm} = useState();
+
   const { data, error, isFetching } = useFetchTripsQuery();
 
   const [addTrip, results] = useAddTripMutation();
 
-  const handleAddTrip = () => {
-    addTrip();
-  };
+  const handleAddTripName = () => {
+    addTrip()
+  }
 
   let content;
   if (isFetching) {
@@ -28,12 +31,11 @@ function TripList () {
     <div>
       <div className="m-2 flex flex-row items-center justify-between">
         <h1 className="text-lg font-bold">Trip List</h1>
-        <Button onClick={handleAddTrip} loading={results.isLoading}>
+        <Button onClick={handleAddTripName} loading={results.isLoading}>
           + Add Trip
         </Button>
       </div>
         {content}
-        <InputForm />
     </div>
     )
 }
