@@ -7,7 +7,7 @@ const formSlice = createSlice({
         name: ''
     },
     reducers: {
-        changeName: async (state, action) => {
+        changeName:(state, action) => {
             state.name = action.payload;
         }
     }

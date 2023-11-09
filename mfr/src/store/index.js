@@ -3,12 +3,16 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import { tripsApi } from "./apis/tripsApi";
 import { luggagesApi } from "./apis/luggagesApi";
 import { itemsApi } from "./apis/itemsApi";
+import { tripsReducer, addTrip, removeTrip, changeSearchTerm } from "./slices/tripsSlice";
+import { formReducer, changeName } from "./slices/formSlice";
 
 export const store = configureStore({
     reducer: {
         [tripsApi.reducerPath]: tripsApi.reducer,
         [luggagesApi.reducerPath]: luggagesApi.reducer,
-        [itemsApi.reducerPath]: itemsApi.reducer
+        [itemsApi.reducerPath]: itemsApi.reducer,
+        trips: tripsReducer,
+        form: formReducer
     },
     middleware: (getDefaultMiddleware) => {
         return getDefaultMiddleware()
@@ -35,4 +39,11 @@ export {
     useAddItemMutation,
     useRemoveItemMutation
 } from './apis/itemsApi';
+
+export {
+    changeName,
+    addTrip,
+    removeTrip,
+    changeSearchTerm
+};
 

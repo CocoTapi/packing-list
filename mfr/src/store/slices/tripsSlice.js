@@ -29,5 +29,5 @@ const tripsSlice = createSlice({
     }
 })
 
-export const { chageSerchTerm, addTrip, removeTrip } = tripsSlice.actions;
+export const { changeSearchTerm, addTrip, removeTrip } = tripsSlice.actions;
 export const tripsReducer = tripsSlice

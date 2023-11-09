@@ -1,42 +1,45 @@
-import { useDispatch } from "react-redux";
-import { changeName, addTrip } from "../store/slices/formSlice";
-import { useAddItemMutation } from "../store";
+import { useDispatch, useSelector } from "react-redux";
+import { changeName } from "../store/slices/formSlice";
+//import { useAddItemMutation } from "../store";
 import Button from "./Button";
 
 
 function InputForm () {
     const dispatch = useDispatch();
-    const { data, error, isLoading } = useAddItemMutation();
+    //const { data, error, isLoading } = useAddItemMutation();
+
+    //to get access to the value attribute in <input>
+    const name = useSelector((state) => {
+        return state.form.name
+    })
 
     const handleNameChange = (event) => {
         dispatch(changeName(event.target.value));
         //console.log(event.target.value)
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const formData = {
-            tripName: event.target.elements.tripName.value
-        };
-        dispatch(addTrip(formData));
-    }
-
-    console.log(error)
+    // const handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const formData = {
+    //         tripName: event.target.elements.tripName.value
+    //     };
+    //     dispatch(addTrip(formData));
+    // }
 
     return (
         <div className="mb-2 border rounded">
             <div>
-                <form onSubmit={handleSubmit}>
+                <form>
                     <div className="m-2 flex flex-row items-center justify-between">
                         <div>
-                            <label className="label">Trip Name</label>
+                            <label>Trip Name</label>
                             <input 
                                 type="text"
+                                value={name}
                                 onChange={handleNameChange}
-                                name="tripName"
                             />
                         </div>
-                        <Button loading={isLoading}>Add Trip</Button>
+                        <Button >Add Trip</Button>
                     </div>
                 </form>
             </div>
