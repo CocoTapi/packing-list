@@ -23,21 +23,6 @@
   ],
   "luggages": [
     {
-      "tripId": 2,
-      "title": "Unbranded Cotton Computer",
-      "id": 4
-    },
-    {
-      "tripId": 2,
-      "title": "Refined Plastic Hat",
-      "id": 5
-    },
-    {
-      "tripId": 2,
-      "title": "Recycled Metal Salad",
-      "id": 6
-    },
-    {
       "tripId": 3,
       "title": "Sleek Granite Tuna",
       "id": 7
@@ -46,13 +31,27 @@
       "tripId": 3,
       "title": "Refined Frozen Car",
       "id": 8
+    },
+    {
+      "tripId": 2,
+      "title": "Luxurious Concrete Sausages",
+      "id": 11
+    },
+    {
+      "tripId": 2,
+      "title": "Gorgeous Plastic Cheese",
+      "id": 12
+    },
+    {
+      "tripId": 2,
+      "title": "Recycled Steel Pants",
+      "id": 13
+    },
+    {
+      "tripId": 2,
+      "title": "Bespoke Concrete Pizza",
+      "id": 14
     }
   ],
-  "items": [
-    {
-      "luggageId": 4,
-      "entry": "Awesome Metal Mouse",
-      "id": 1
-    }
-  ]
+  "items": []
 }

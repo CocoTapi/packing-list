@@ -43,7 +43,7 @@ const tripsApi = createApi({
 				},
 				query: (formData) => {
 					return {
-						url: 'trips',
+						url: 'trips/submit-form',
 						method: 'POST',
 						body: {
 							name: formData,
