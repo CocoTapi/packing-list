@@ -1,14 +1,20 @@
 import { useFetchTripsQuery, useAddTripMutation } from "../store";
 import Button from "./Button";
+import InputForm from "./InputForm";
 import TripListItem from './TripListItem'
+import { useState } from 'react';
 
-function TripList () {
+function TripList() {
+  const [isFormVisible, setFormVisible] = useState(false);
   const { data, error, isFetching } = useFetchTripsQuery();
-
   const [addTrip, results] = useAddTripMutation();
 
   const handleAddTripName = () => {
     addTrip()
+  }
+
+  const handleShowForm = () => {
+    setFormVisible(true);
   }
 
   let content;
@@ -30,10 +36,12 @@ function TripList () {
         <Button onClick={handleAddTripName} loading={results.isLoading}>
           + Add Trip
         </Button>
+        <Button onClick={handleShowForm}>Show</Button>
       </div>
-        {content}
+      {content}
+      {isFormVisible && <InputForm />}
     </div>
-    )
+  )
 }
 
 export default TripList;
