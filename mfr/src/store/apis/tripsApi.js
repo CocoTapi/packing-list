@@ -2,11 +2,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { faker } from '@faker-js/faker';
 
 // DEV ONLY!!!
-const pause = (duration) => {
-	return new Promise((resolve) => {
-		setTimeout(resolve, duration);
-	});
-};
+// const pause = (duration) => {
+// 	return new Promise((resolve) => {
+// 		setTimeout(resolve, duration);
+// 	});
+// };
 
 const tripsApi = createApi({
 	reducerPath: 'trips',
