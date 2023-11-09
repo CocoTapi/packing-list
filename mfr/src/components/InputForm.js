@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { changeName, addTrip } from "../store/slices/tripSlice";
+import { changeName, addTrip } from "../store/slices/formSlice";
 import { useAddItemMutation } from "../store";
 import Button from "./Button";
 
