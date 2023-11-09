@@ -15,6 +15,10 @@
     {
       "name": "Practical Bronze Ball",
       "id": 5
+    },
+    {
+      "name": "Licensed Wooden Soap",
+      "id": 6
     }
   ],
   "luggages": [
@@ -32,6 +36,16 @@
       "tripId": 2,
       "title": "Recycled Metal Salad",
       "id": 6
+    },
+    {
+      "tripId": 3,
+      "title": "Sleek Granite Tuna",
+      "id": 7
+    },
+    {
+      "tripId": 3,
+      "title": "Refined Frozen Car",
+      "id": 8
     }
   ],
   "items": [

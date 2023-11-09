@@ -39,7 +39,7 @@ const tripsApi = createApi({
             }),
             addTrip: builder.mutation({
                 invalidatesTags: (result, error, trip) => {
-                    return [{ type: 'Trip', id: trip.id }]
+                    return [{ type: 'Trip' }]
                 },
                 query: () => {
                     return {
