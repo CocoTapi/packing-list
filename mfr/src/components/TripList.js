@@ -1,11 +1,12 @@
 import { GoPlus } from "react-icons/go";
 import { useFetchTripsQuery} from "../store";
 import Button from "./Button";
-import InputForm from "./InputForm";
+//import InputForm from "./InputForm";
 import TripListItem from './TripListItem'
 import { useState } from 'react';
 
 function TripList() {
+
   const [isFormVisible, setFormVisible] = useState(false);
   const { data, error, isFetching } = useFetchTripsQuery();
   //const [addTrip, results] = useAddTripMutation();
@@ -40,7 +41,7 @@ function TripList() {
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
       {content}
-      {isFormVisible && <InputForm />}
+      {isFormVisible && <div>Form Screen!</div>}
     </div>
   )
 }
