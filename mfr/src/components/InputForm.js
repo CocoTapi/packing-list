@@ -1,4 +1,3 @@
-//import { useDispatch, useSelector } from "react-redux";
 import { useAddTripMutation } from "../store";
 import Button from "./Button";
 import { useState } from 'react';
@@ -7,13 +6,7 @@ import { useState } from 'react';
 function InputForm () {
     const [newTrip, setNewTrip] = useState('');
     const [addTrip] = useAddTripMutation();
-    //const dispatch = useDispatch();
-
-    //to get access to the value attribute in <input>
-    // const name = useSelector((state) => {
-    //     return state.form.name
-    // })
-
+   
     const handleNameChange = (event) => {
         setNewTrip(event.target.value);
     }
