@@ -26,11 +26,11 @@ function InputForm () {
 
     return (
         <div className="mb-2 border rounded">
-            <div>
+            <div className="bg-amber-200">
                 <form onSubmit={handleSubmit}>
-                    <div className="m-2 flex flex-row items-center justify-between">
+                    <div className="p-2 m-2 flex flex-row items-center justify-between">
                         <div>
-                            <label htmlFor="trip-form">Trip Name</label>
+                            <label htmlFor="trip-form" className="mr-3">Add Trip</label>
                             <input 
                                 type="text"
                                 value={newTrip}
@@ -39,7 +39,7 @@ function InputForm () {
                                 id="trip-form"
                             />
                         </div>
-                        <Button >Submit</Button>
+                        <Button >Add</Button>
                     </div>
                 </form>
             </div>

@@ -37,8 +37,8 @@ function TripList() {
         <h1 className="text-lg font-bold">Trip List</h1>
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
-      {content}
       {isFormVisible && <InputForm />}
+      {content}
     </div>
   )
 }
