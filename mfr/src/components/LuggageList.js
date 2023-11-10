@@ -3,15 +3,18 @@ import { GoPlus } from "react-icons/go";
 //import Skeleton from './Skeleton';
 import Button from './Button';
 import LuggageListItem from "./LuggageListItem";
+import { useState } from 'react';
+import SelectForm from "./SelectForm";
 
 function LuggageList({ trip }) {
+  const [selectionVisible, setSelectionVisible] = useState(false);
   const { data, error, isFetching} = useFetchLuggageQuery(trip);
   //console.log(data);
 
-  const [addLuggage, results] = useAddLuggageMutation();
+  //const [addLuggage, results] = useAddLuggageMutation();
   //console.log(results);
-  const handleAddLuggage = () => {
-    addLuggage(trip);
+  const handleShowForm = () => {
+    setSelectionVisible(true);
   }
 
   let content;
@@ -30,8 +33,9 @@ function LuggageList({ trip }) {
     <div>
       <div className="m-2 flex flex-row items-center justify-between">
         <h3 className="text-lg font-bold">Luggages for {trip.name}</h3>
-        <Button onClick={handleAddLuggage} loading={results.isLoading}><GoPlus /></Button>
+        <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
+      {selectionVisible && <SelectForm />}
       {content}
     </div>
   );
