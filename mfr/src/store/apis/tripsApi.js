@@ -41,12 +41,12 @@ const tripsApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'Trip' }];
 				},
-				query: (trip) => {
+				query: ({name}) => {
 					return {
 						url: 'trips',
 						method: 'POST',
 						body: {
-							trip,
+							name,
 						},
 					};
 				},
