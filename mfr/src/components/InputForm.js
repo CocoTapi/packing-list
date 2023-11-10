@@ -1,34 +1,19 @@
-import { useAddTripMutation } from "../store";
 import Button from "./Button";
-import { useState } from 'react';
 
 
-function InputForm () {
-    const [newTrip, setNewTrip] = useState('');
-    const [addTrip] = useAddTripMutation();
-   
-    const handleNameChange = (event) => {
-        setNewTrip(event.target.value);
-    }
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        addTrip({ name: newTrip });
-        setNewTrip('');
-    }
-
-    return (
+function InputForm ({ onChange, newValue, onSubmit, placeholder }) {
+     return (
         <div className="mb-2 border rounded">
             <div className="bg-amber-200">
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={onSubmit}>
                     <div className="p-2 m-2 flex flex-row items-center justify-between">
                         <div>
                             <label htmlFor="trip-form" className="mr-3">Add Trip</label>
                             <input 
                                 type="text"
-                                value={newTrip}
-                                onChange={handleNameChange}
-                                placeholder="Enter new trip"
+                                value={newValue}
+                                onChange={onChange}
+                                placeholder={placeholder}
                                 id="trip-form"
                             />
                         </div>
