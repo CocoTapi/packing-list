@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { faker } from '@faker-js/faker';
 
 // DEV ONLY!!!
 const pause = (duration) => {
@@ -42,13 +41,13 @@ const luggagesApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'TripsLuggage', id: trip.id }];
 				},
-				query: ({trip, name}) => {
+				query: (trip) => {
 					return {
 						url: 'luggages',
 						method: 'POST',
 						body: {
 							tripId: trip.id,
-							title: name,
+							title: "XXXX",
 						},
 					};
 				},
