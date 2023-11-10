@@ -1,27 +1,29 @@
-import { useDispatch, useSelector } from "react-redux";
-import { changeName, addTrip } from "../store";
+//import { useDispatch, useSelector } from "react-redux";
+import { useAddTripMutation } from "../store";
 //import { useAddItemMutation } from "../store";
 import Button from "./Button";
+import { useState } from 'react';
 
 
 function InputForm () {
-    const dispatch = useDispatch();
-    //const { data, error, isLoading } = useAddItemMutation();
+    const [newTrip, setNewTrip] = useState('');
+    const [addTrip] = useAddTripMutation();
+    //const dispatch = useDispatch();
 
     //to get access to the value attribute in <input>
-    const name = useSelector((state) => {
-        return state.form.name
-    })
+    // const name = useSelector((state) => {
+    //     return state.form.name
+    // })
 
     const handleNameChange = (event) => {
-        dispatch(changeName(event.target.value));
-        //console.log(event.target.value)
+        setNewTrip(event.target.value);
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        
-        dispatch(addTrip({name}));
+        addTrip({ name: newTrip});
+        setNewTrip('')
+       ;
     }
 
     return (
@@ -30,11 +32,13 @@ function InputForm () {
                 <form onSubmit={handleSubmit}>
                     <div className="m-2 flex flex-row items-center justify-between">
                         <div>
-                            <label>Trip Name</label>
+                            <label htmlFor="trip-form">Trip Name</label>
                             <input 
                                 type="text"
-                                value={name}
+                                value={newTrip}
                                 onChange={handleNameChange}
+                                placeholder="Enter new trip"
+                                id="trip-form"
                             />
                         </div>
                         <Button >Submit</Button>

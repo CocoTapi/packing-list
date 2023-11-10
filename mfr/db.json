@@ -19,6 +19,12 @@
     {
       "name": "Licensed Wooden Soap",
       "id": 6
+    },
+    {
+      "name": {
+        "name": "Dodger"
+      },
+      "id": 7
     }
   ],
   "luggages": [
@@ -53,5 +59,22 @@
       "id": 14
     }
   ],
-  "items": []
+  "items": [
+    {
+      "entry": "Refined Granite Tuna",
+      "id": 1
+    },
+    {
+      "entry": "Luxurious Wooden Pizza",
+      "id": 2
+    },
+    {
+      "entry": "Ergonomic Plastic Ball",
+      "id": 3
+    },
+    {
+      "entry": "Rustic Soft Computer",
+      "id": 4
+    }
+  ]
 }
