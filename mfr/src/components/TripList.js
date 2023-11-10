@@ -8,13 +8,12 @@ import InputForm from "./InputForm";
 function TripList() {
   const [isFormVisible, setFormVisible] = useState(false);
   const { data, error, isFetching } = useFetchTripsQuery();
+  const [newValue, setNewValue] = useState('');
+  const [addTrip] = useAddTripMutation();
  
   const handleShowForm = () => {
     setFormVisible(true);
   }
-
-  const [newValue, setNewValue] = useState('');
-  const [addTrip] = useAddTripMutation();
  
   const handleNameChange = (event) => {
       setNewValue(event.target.value);
