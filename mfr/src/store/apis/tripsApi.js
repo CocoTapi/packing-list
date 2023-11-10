@@ -46,7 +46,7 @@ const tripsApi = createApi({
 						url: 'trips',
 						method: 'POST',
 						body: {
-							name: trip,
+							trip,
 						},
 					};
 				},

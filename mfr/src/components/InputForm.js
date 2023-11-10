@@ -1,6 +1,5 @@
 //import { useDispatch, useSelector } from "react-redux";
 import { useAddTripMutation } from "../store";
-//import { useAddItemMutation } from "../store";
 import Button from "./Button";
 import { useState } from 'react';
 
@@ -21,9 +20,8 @@ function InputForm () {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        addTrip({ name: newTrip});
-        setNewTrip('')
-       ;
+        addTrip({ name: newTrip });
+        setNewTrip('');
     }
 
     return (
