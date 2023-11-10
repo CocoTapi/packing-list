@@ -8,13 +8,23 @@ import InputForm from "./InputForm";
 
 function LuggageList({ trip }) {
   const [isFormVisible, setFormVisible] = useState(false);
-  const { data, error, isFetching} = useFetchLuggageQuery(trip);
-  //console.log(data);
-
-  //const [addLuggage, results] = useAddLuggageMutation();
-  //console.log(results);
+  const { data, error, isFetching } = useFetchLuggageQuery();
+  
   const handleShowForm = () => {
     setFormVisible(true);
+  }
+
+  const [newValue, setNewValue] = useState('');
+  const [addLuggage] = useAddLuggageMutation();
+ 
+  const handleNameChange = (event) => {
+      setNewValue(event.target.value);
+  }
+
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      addLuggage({ name: newValue });
+      setNewValue('');
   }
 
   let content;
@@ -35,7 +45,11 @@ function LuggageList({ trip }) {
         <h3 className="text-lg font-bold">Luggages for {trip.name}</h3>
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
-      {isFormVisible && <InputForm />}
+      {isFormVisible && <InputForm 
+        onSubmit={handleSubmit} 
+        onChange={handleNameChange} 
+        newValue={newValue} 
+        placeholder="Enter New Luggage"/>}
       {content}
     </div>
   );

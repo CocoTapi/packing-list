@@ -42,13 +42,13 @@ const luggagesApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'TripsLuggage', id: trip.id }];
 				},
-				query: (trip) => {
+				query: ({trip, name}) => {
 					return {
 						url: 'luggages',
 						method: 'POST',
 						body: {
 							tripId: trip.id,
-							title: faker.commerce.productName(),
+							title: name,
 						},
 					};
 				},
