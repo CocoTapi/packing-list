@@ -21,7 +21,7 @@ const tripsSlice = createSlice({
         removeTrip(state, action) {
             //Assumption:
             //action.payload === the id of the car we want to remove
-            const updated = state.cars.filter((trip) => {
+            const updated = state.trips.filter((trip) => {
                 return trip.id !== action.payload;
             });
             state.trips = updated;
