@@ -4,9 +4,9 @@ import Button from "./Button";
 //import InputForm from "./InputForm";
 import TripListItem from './TripListItem'
 import { useState } from 'react';
+import InputForm from "./InputForm";
 
 function TripList() {
-
   const [isFormVisible, setFormVisible] = useState(false);
   const { data, error, isFetching } = useFetchTripsQuery();
   //const [addTrip, results] = useAddTripMutation();
@@ -35,13 +35,10 @@ function TripList() {
     <div>
       <div className="m-2 flex flex-row items-center justify-between">
         <h1 className="text-lg font-bold">Trip List</h1>
-        {/* <Button onClick={handleAddTripName} loading={results.isLoading}>
-          + Add Trip
-        </Button> */}
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
       {content}
-      {isFormVisible && <div>Form Screen!</div>}
+      {isFormVisible && <InputForm />}
     </div>
   )
 }
