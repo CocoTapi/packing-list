@@ -40,7 +40,7 @@ function ItemsList ({ luggage }) {
     return (
         <div>
             <div className="m-2 flex flex-row items-center juctify-between">
-                <h3 className="text-lg font-bold">Items In {luggage.title}</h3>
+                <h3 className="text-lg font-bold">Items In {luggage.name}</h3>
                 <Button onClick={handleShowForm}>
                     <GoPlus />
                 </Button>

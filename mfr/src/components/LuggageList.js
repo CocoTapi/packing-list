@@ -41,7 +41,7 @@ function LuggageList({ trip }) {
   return (
     <div>
       <div className="m-2 flex flex-row items-center justify-between">
-        <h3 className="text-lg font-bold">Luggages for {trip.name}</h3>
+        <h3 className="text-lg font-bold">Luggage for {trip.name}</h3>
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
       {isFormVisible && <InputForm

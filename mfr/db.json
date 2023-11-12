@@ -5,12 +5,12 @@
       "id": 7
     },
     {
-      "name": "Thunksgiving",
-      "id": 10
-    },
-    {
       "name": "NYC",
       "id": 11
+    },
+    {
+      "name": "Thanksgiving",
+      "id": 12
     }
   ],
   "luggages": [
@@ -33,6 +33,11 @@
       "parentId": 7,
       "name": "Orange Suitcase",
       "id": 19
+    },
+    {
+      "parentId": 12,
+      "name": "Suitcase",
+      "id": 20
     }
   ],
   "items": [
@@ -65,6 +70,36 @@
       "parentId": 19,
       "name": "Makeup poach ",
       "id": 10
+    },
+    {
+      "parentId": 20,
+      "name": "Clothes",
+      "id": 11
+    },
+    {
+      "parentId": 20,
+      "name": "",
+      "id": 12
+    },
+    {
+      "parentId": 20,
+      "name": "Toothbrush",
+      "id": 13
+    },
+    {
+      "parentId": 20,
+      "name": "Computer",
+      "id": 15
+    },
+    {
+      "parentId": 20,
+      "name": "Keyboard",
+      "id": 16
+    },
+    {
+      "parentId": 20,
+      "name": "Keyboard mat",
+      "id": 17
     }
   ]
 }
