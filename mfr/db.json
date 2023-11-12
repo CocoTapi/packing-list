@@ -1,18 +1,6 @@
 {
   "trips": [
     {
-      "name": "Unbranded Cotton Salad",
-      "id": 2
-    },
-    {
-      "name": "Awesome Fresh Chair",
-      "id": 3
-    },
-    {
-      "name": "Recycled Concrete Mouse",
-      "id": 4
-    },
-    {
       "name": "Japan",
       "id": 7
     },
@@ -27,31 +15,6 @@
   ],
   "luggages": [
     {
-      "tripId": 3,
-      "title": "Sleek Granite Tuna",
-      "id": 7
-    },
-    {
-      "tripId": 3,
-      "title": "Refined Frozen Car",
-      "id": 8
-    },
-    {
-      "tripId": 2,
-      "title": "Luxurious Concrete Sausages",
-      "id": 11
-    },
-    {
-      "tripId": 2,
-      "title": "Hand Bag",
-      "id": 14
-    },
-    {
-      "tripId": 2,
-      "title": "Pink Bag",
-      "id": 15
-    },
-    {
       "parentId": 2,
       "name": "Orange Bag",
       "id": 16
@@ -60,6 +23,16 @@
       "parentId": 2,
       "name": "blue bag",
       "id": 17
+    },
+    {
+      "parentId": 7,
+      "name": "brown backpack",
+      "id": 18
+    },
+    {
+      "parentId": 7,
+      "name": "Orange Suitcase",
+      "id": 19
     }
   ],
   "items": [
@@ -72,6 +45,26 @@
       "parentId": 16,
       "name": "Umbrella ",
       "id": 6
+    },
+    {
+      "parentId": 18,
+      "name": "pain killer",
+      "id": 7
+    },
+    {
+      "parentId": 18,
+      "name": "glasses case",
+      "id": 8
+    },
+    {
+      "parentId": 19,
+      "name": "Clothes",
+      "id": 9
+    },
+    {
+      "parentId": 19,
+      "name": "Makeup poach ",
+      "id": 10
     }
   ]
 }

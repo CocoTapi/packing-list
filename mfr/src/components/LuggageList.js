@@ -44,7 +44,8 @@ function LuggageList({ trip }) {
         <h3 className="text-lg font-bold">Luggages for {trip.name}</h3>
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
-      {isFormVisible && <InputForm 
+      {isFormVisible && <InputForm
+        label="Luggage" 
         onSubmit={handleSubmit} 
         onChange={handleNameChange} 
         newValue={newValue} 

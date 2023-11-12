@@ -43,7 +43,8 @@ function TripList() {
         <h1 className="text-lg font-bold">Trip List</h1>
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
-      {isFormVisible && <InputForm 
+      {isFormVisible && <InputForm
+        label="Trip" 
         onSubmit={handleSubmit} 
         onChange={handleNameChange} 
         newValue={newValue} 

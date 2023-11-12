@@ -46,6 +46,7 @@ function ItemsList ({ luggage }) {
                 </Button>
             </div>
             {isFormVisible && <InputForm 
+                label="Item"
                 onSubmit={handleSubmit} 
                 onChange={handleNameChange} 
                 newValue={newValue} 
