@@ -1,31 +1,26 @@
-import { useDispatch} from "react-redux";
-import { changeName, addTrip } from "../store/slices/tripSlice";
+import Button from "./Button";
 
-function InputForm ({ onSubmit }) {
-    const dispatch = useDispatch();
 
-    const handleNameChange = (event) => {
-        dispatch(changeName(event.target.value));
-    }
-
-    const handleSubmit = (formData) => {
-        formData.prevendDefault();
-        dispatch(addTrip(formData));
-    }
-
-    return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div className="m-2 flex flex-row items-center justify-between">
-                    <div>
-                        <label className="label">Trip Name</label>
-                        <input 
-                            onChange={handleNameChange} 
-                        />
+function InputForm ({ onChange, newValue, onSubmit, placeholder, label }) {
+     return (
+        <div className="mb-2 border rounded">
+            <div className="bg-amber-200">
+                <form onSubmit={onSubmit}>
+                    <div className="p-2 m-2 flex flex-row items-center justify-between">
+                        <div>
+                            <label htmlFor="trip-form" className="mr-3">Add {label}</label>
+                            <input 
+                                type="text"
+                                value={newValue}
+                                onChange={onChange}
+                                placeholder={placeholder}
+                                id="trip-form"
+                            />
+                        </div>
+                        <Button >Add</Button>
                     </div>
-                    <button>+ Add</button>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     )
 }

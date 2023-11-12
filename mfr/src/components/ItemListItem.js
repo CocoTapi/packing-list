@@ -13,7 +13,7 @@ function ItemListItem({ item }){
         <div className="absolute inset-0 flex items-center justify-center hover:bg-red-100 opacity-0 hover:opacity-80">
             <GoTrash className="text-3xl" />
         </div>
-        {item.entry}
+        {item.name}
     </div>
     )
 }

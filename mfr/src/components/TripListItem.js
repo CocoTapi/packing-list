@@ -22,8 +22,8 @@ function TripListItem ({ trip }) {
     ); 
 
     return (
-        <ExpandablePanel header={header} bgColor="bg-amber-200">
-            <LuggageList trip={trip} />
+        <ExpandablePanel key={trip.id} header={header} bgColor="bg-amber-200">
+            <LuggageList trip={trip} /> 
         </ExpandablePanel>
     );
 }

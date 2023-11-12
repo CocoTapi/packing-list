@@ -3,15 +3,27 @@ import { GoPlus } from "react-icons/go";
 //import Skeleton from './Skeleton';
 import Button from './Button';
 import LuggageListItem from "./LuggageListItem";
+import { useState } from 'react';
+import InputForm from "./InputForm";
 
 function LuggageList({ trip }) {
-  const { data, error, isFetching} = useFetchLuggageQuery(trip);
-  //console.log(data);
+  const [isFormVisible, setFormVisible] = useState(false);
+  const { data, error, isFetching } = useFetchLuggageQuery(trip);
+  const [newValue, setNewValue] = useState('');
+  const [addLuggage] = useAddLuggageMutation();
+  
+  const handleShowForm = () => {
+    setFormVisible(true);
+  }
+ 
+  const handleNameChange = (event) => {
+      setNewValue(event.target.value);
+  }
 
-  const [addLuggage, results] = useAddLuggageMutation();
-  //console.log(results);
-  const handleAddLuggage = () => {
-    addLuggage(trip);
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      addLuggage({ name: newValue, parentId: trip.id });
+      setNewValue('');
   }
 
   let content;
@@ -29,9 +41,15 @@ function LuggageList({ trip }) {
   return (
     <div>
       <div className="m-2 flex flex-row items-center justify-between">
-        <h3 className="text-lg font-bold">Luggages for {trip.name}</h3>
-        <Button onClick={handleAddLuggage} loading={results.isLoading}><GoPlus /></Button>
+        <h3 className="text-lg font-bold">Luggage for {trip.name}</h3>
+        <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
+      {isFormVisible && <InputForm
+        label="Luggage" 
+        onSubmit={handleSubmit} 
+        onChange={handleNameChange} 
+        newValue={newValue} 
+        placeholder="Enter New Luggage"/>}
       {content}
     </div>
   );

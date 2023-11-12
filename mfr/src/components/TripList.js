@@ -1,14 +1,28 @@
-import { useFetchTripsQuery, useAddTripMutation } from "../store";
+import { GoPlus } from "react-icons/go";
+import { useFetchTripsQuery, useAddTripMutation} from "../store";
 import Button from "./Button";
 import TripListItem from './TripListItem'
+import { useState } from 'react';
+import InputForm from "./InputForm";
 
-function TripList () {
+function TripList() {
+  const [isFormVisible, setFormVisible] = useState(false);
   const { data, error, isFetching } = useFetchTripsQuery();
+  const [newValue, setNewValue] = useState('');
+  const [addTrip] = useAddTripMutation();
+ 
+  const handleShowForm = () => {
+    setFormVisible(true);
+  }
+ 
+  const handleNameChange = (event) => {
+      setNewValue(event.target.value);
+  }
 
-  const [addTrip, results] = useAddTripMutation();
-
-  const handleAddTripName = () => {
-    addTrip()
+  const handleSubmit = (event) => {
+      event.preventDefault();
+      addTrip({ name: newValue });
+      setNewValue('');
   }
 
   let content;
@@ -27,13 +41,17 @@ function TripList () {
     <div>
       <div className="m-2 flex flex-row items-center justify-between">
         <h1 className="text-lg font-bold">Trip List</h1>
-        <Button onClick={handleAddTripName} loading={results.isLoading}>
-          + Add Trip
-        </Button>
+        <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
-        {content}
+      {isFormVisible && <InputForm
+        label="Trip" 
+        onSubmit={handleSubmit} 
+        onChange={handleNameChange} 
+        newValue={newValue} 
+        placeholder="Enter New Trip"/>}
+      {content}
     </div>
-    )
+  )
 }
 
 export default TripList;

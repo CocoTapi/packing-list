@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { faker } from '@faker-js/faker';
 
 const itemsApi = createApi({
 	reducerPath: 'items',
@@ -20,7 +19,7 @@ const itemsApi = createApi({
 					return {
 						url: '/items',
 						params: {
-							luggageId: luggage.luggageId,
+							parentId: luggage.id,
 						},
 						method: 'GET',
 					};
@@ -30,13 +29,13 @@ const itemsApi = createApi({
 				invalidatesTags: (result, error, luggage) => {
 					return [{ type: 'LuggagesItem', id: luggage.id }];
 				},
-				query: (luggage) => {
+				query: ({name, parentId}) => {
 					return {
 						method: 'POST',
 						url: '/items',
 						body: {
-							luggageId: luggage.id,
-							entry: faker.commerce.productName(),
+							parentId,
+                            name
 						},
 					};
 				},

@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { faker } from '@faker-js/faker';
+//import { faker } from '@faker-js/faker';
 
 // DEV ONLY!!!
 // const pause = (duration) => {
@@ -30,9 +30,6 @@ const tripsApi = createApi({
 				query: () => {
 					return {
 						url: '/trips',
-						// params: {
-						//     id: trip.id,
-						// },
 						method: 'GET',
 					};
 				},
@@ -41,12 +38,12 @@ const tripsApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'Trip' }];
 				},
-				query: (formData) => {
+				query: ({name}) => {
 					return {
-						url: 'trips/submit-form',
+						url: 'trips',
 						method: 'POST',
 						body: {
-							name: formData,
+							name,
 						},
 					};
 				},

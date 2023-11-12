@@ -1,57 +1,105 @@
 {
   "trips": [
     {
-      "name": "Unbranded Cotton Salad",
-      "id": 2
+      "name": "Japan",
+      "id": 7
     },
     {
-      "name": "Awesome Fresh Chair",
-      "id": 3
+      "name": "NYC",
+      "id": 11
     },
     {
-      "name": "Recycled Concrete Mouse",
-      "id": 4
-    },
-    {
-      "name": "Practical Bronze Ball",
-      "id": 5
-    },
-    {
-      "name": "Licensed Wooden Soap",
-      "id": 6
+      "name": "Thanksgiving",
+      "id": 12
     }
   ],
   "luggages": [
     {
-      "tripId": 3,
-      "title": "Sleek Granite Tuna",
+      "parentId": 2,
+      "name": "Orange Bag",
+      "id": 16
+    },
+    {
+      "parentId": 2,
+      "name": "blue bag",
+      "id": 17
+    },
+    {
+      "parentId": 7,
+      "name": "brown backpack",
+      "id": 18
+    },
+    {
+      "parentId": 7,
+      "name": "Orange Suitcase",
+      "id": 19
+    },
+    {
+      "parentId": 12,
+      "name": "Suitcase",
+      "id": 20
+    }
+  ],
+  "items": [
+    {
+      "parentId": 16,
+      "name": "Clothes",
+      "id": 5
+    },
+    {
+      "parentId": 16,
+      "name": "Umbrella ",
+      "id": 6
+    },
+    {
+      "parentId": 18,
+      "name": "pain killer",
       "id": 7
     },
     {
-      "tripId": 3,
-      "title": "Refined Frozen Car",
+      "parentId": 18,
+      "name": "glasses case",
       "id": 8
     },
     {
-      "tripId": 2,
-      "title": "Luxurious Concrete Sausages",
+      "parentId": 19,
+      "name": "Clothes",
+      "id": 9
+    },
+    {
+      "parentId": 19,
+      "name": "Makeup poach ",
+      "id": 10
+    },
+    {
+      "parentId": 20,
+      "name": "Clothes",
       "id": 11
     },
     {
-      "tripId": 2,
-      "title": "Gorgeous Plastic Cheese",
+      "parentId": 20,
+      "name": "",
       "id": 12
     },
     {
-      "tripId": 2,
-      "title": "Recycled Steel Pants",
+      "parentId": 20,
+      "name": "Toothbrush",
       "id": 13
     },
     {
-      "tripId": 2,
-      "title": "Bespoke Concrete Pizza",
-      "id": 14
+      "parentId": 20,
+      "name": "Computer",
+      "id": 15
+    },
+    {
+      "parentId": 20,
+      "name": "Keyboard",
+      "id": 16
+    },
+    {
+      "parentId": 20,
+      "name": "Keyboard mat",
+      "id": 17
     }
-  ],
-  "items": []
+  ]
 }
