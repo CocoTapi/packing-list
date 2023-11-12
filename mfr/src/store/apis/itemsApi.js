@@ -35,7 +35,7 @@ const itemsApi = createApi({
 						method: 'POST',
 						url: '/items',
 						body: {
-							luggageId: luggage.id,
+							parentId: luggage.id,
 							entry: faker.commerce.productName(),
 						},
 					};

@@ -22,6 +22,7 @@ const luggagesApi = createApi({
 			fetchLuggage: builder.query({
 				providesTags: (result, error, trip) => {
 					const tags = result.map((luggage) => {
+						console.log(luggage);
 						return { type: 'Luggage', id: luggage.id };
 					});
 					tags.push({ type: 'TripsLuggage', id: trip.id });
@@ -31,7 +32,7 @@ const luggagesApi = createApi({
 					return {
 						url: '/luggages',
 						params: {
-							tripId: trip.id,
+							//tripId: trip.id,
 						},
 						method: 'GET',
 					};
