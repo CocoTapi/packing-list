@@ -8,7 +8,7 @@ import InputForm from "./InputForm";
 
 function LuggageList({ trip }) {
   const [isFormVisible, setFormVisible] = useState(false);
-  const { data, error, isFetching } = useFetchLuggageQuery();
+  const { data, error, isFetching } = useFetchLuggageQuery(trip);
   const [newValue, setNewValue] = useState('');
   const [addLuggage] = useAddLuggageMutation();
   
@@ -22,7 +22,7 @@ function LuggageList({ trip }) {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      addLuggage({ title: newValue });
+      addLuggage({ title: newValue, tripId: trip.id });
       setNewValue('');
   }
 
