@@ -7,7 +7,7 @@ const pause = (duration) => {
 	});
 };
 
-const luggagesApi = createApi({
+const luggageApi = createApi({
 	reducerPath: 'luggages',
 	baseQuery: fetchBaseQuery({
 		baseUrl: 'http://192.168.50.179:3005', //this must change if your IP changes
@@ -73,5 +73,5 @@ export const {
 	useFetchLuggageQuery,
 	useAddLuggageMutation,
 	useRemoveLuggageMutation,
-} = luggagesApi;
-export { luggagesApi };
+} = luggageApi;
+export { luggageApi };
