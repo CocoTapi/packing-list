@@ -1,10 +1,10 @@
 import Button from "./Button";
 
 
-function InputForm ({ onChange, newValue, onSubmit, placeholder, label }) {
+function InputForm ({ onChange, newValue, onSubmit, placeholder, label, bgColor }) {
      return (
         <div className="mb-2 border rounded">
-            <div className="bg-amber-200">
+            <div className={bgColor}>
                 <form onSubmit={onSubmit}>
                     <div className="p-2 m-2 flex flex-row items-center justify-between">
                         <div>

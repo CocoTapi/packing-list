@@ -44,6 +44,7 @@ function TripList() {
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
       {isFormVisible && <InputForm
+      bgColor="bg-amber-200"
         label="Trip" 
         onSubmit={handleSubmit} 
         onChange={handleNameChange} 

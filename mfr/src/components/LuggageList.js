@@ -45,6 +45,7 @@ function LuggageList({ trip }) {
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
       {isFormVisible && <InputForm
+        bgColor="bg-lime-200"
         label="Luggage" 
         onSubmit={handleSubmit} 
         onChange={handleNameChange} 
