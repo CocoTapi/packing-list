@@ -45,6 +45,21 @@
       "tripId": 2,
       "title": "Hand Bag",
       "id": 14
+    },
+    {
+      "tripId": 2,
+      "title": "Pink Bag",
+      "id": 15
+    },
+    {
+      "parentId": 2,
+      "name": "Orange Bag",
+      "id": 16
+    },
+    {
+      "parentId": 2,
+      "name": "blue bag",
+      "id": 17
     }
   ],
   "items": [

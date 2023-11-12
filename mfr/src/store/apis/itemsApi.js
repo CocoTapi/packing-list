@@ -30,13 +30,13 @@ const itemsApi = createApi({
 				invalidatesTags: (result, error, luggage) => {
 					return [{ type: 'LuggagesItem', id: luggage.id }];
 				},
-				query: (luggage) => {
+				query: ({name, parentId}) => {
 					return {
 						method: 'POST',
 						url: '/items',
 						body: {
-							parentId: luggage.id,
-							entry: faker.commerce.productName(),
+							parentId,
+                            name
 						},
 					};
 				},
