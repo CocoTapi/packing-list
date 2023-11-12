@@ -21,12 +21,14 @@ const luggagesApi = createApi({
 		return {
 			fetchLuggage: builder.query({
 				providesTags: (result, error, trip) => {
+					console.log(result);
 					const tags = result.map((luggage) => {
-						//console.log(luggage);
 						return { type: 'Luggage', id: luggage.id };
 					});
-					console.log(trip);
-					tags.push({ type: 'TripsLuggage', id: trip.id });
+					tags.push(result.map((luggage) => {
+						return { type: 'TripsLuggage', id: luggage.tripId };
+						})
+					);
 					return tags;
 				},
 				query: (trip) => {
