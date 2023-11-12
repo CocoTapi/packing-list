@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 // DEV ONLY!!!
-const pause = (duration) => {
-	return new Promise((resolve) => {
-		setTimeout(resolve, duration);
-	});
-};
+// const pause = (duration) => {
+// 	return new Promise((resolve) => {
+// 		setTimeout(resolve, duration);
+// 	});
+// };
 
 const luggageApi = createApi({
 	reducerPath: 'luggages',

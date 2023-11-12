@@ -30,9 +30,6 @@ const tripsApi = createApi({
 				query: () => {
 					return {
 						url: '/trips',
-						// params: {
-						//     id: trip.id,
-						// },
 						method: 'GET',
 					};
 				},
