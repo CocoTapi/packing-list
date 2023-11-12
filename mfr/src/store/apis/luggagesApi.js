@@ -29,7 +29,7 @@ const luggagesApi = createApi({
 					return tags;
 				},
 				query: (trip) => {
-					console.log(trip);
+					//console.log(trip);
 					return {
 						url: '/luggages',
 						params: {
@@ -43,13 +43,13 @@ const luggagesApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'TripsLuggage', id: trip.id }];
 				},
-				query: (trip) => {
+				query: ({title, tripId}) => {
 					return {
 						url: 'luggages',
 						method: 'POST',
 						body: {
-							tripId: trip.id,
-							title: "XXXX",
+							tripId,
+							title,
 						},
 					};
 				},
