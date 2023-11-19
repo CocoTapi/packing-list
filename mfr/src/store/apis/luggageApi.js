@@ -1,14 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { faker } from '@faker-js/faker';
 
 // DEV ONLY!!!
-const pause = (duration) => {
-	return new Promise((resolve) => {
-		setTimeout(resolve, duration);
-	});
-};
+// const pause = (duration) => {
+// 	return new Promise((resolve) => {
+// 		setTimeout(resolve, duration);
+// 	});
+// };
 
-const luggagesApi = createApi({
+const luggageApi = createApi({
 	reducerPath: 'luggages',
 	baseQuery: fetchBaseQuery({
 		baseUrl: 'http://192.168.50.179:3005', //this must change if your IP changes
@@ -22,6 +21,7 @@ const luggagesApi = createApi({
 		return {
 			fetchLuggage: builder.query({
 				providesTags: (result, error, trip) => {
+					//console.log(result);
 					const tags = result.map((luggage) => {
 						return { type: 'Luggage', id: luggage.id };
 					});
@@ -29,10 +29,11 @@ const luggagesApi = createApi({
 					return tags;
 				},
 				query: (trip) => {
+					//console.log(trip);
 					return {
 						url: '/luggages',
 						params: {
-							tripId: trip.id,
+							parentId: trip.id,
 						},
 						method: 'GET',
 					};
@@ -42,13 +43,13 @@ const luggagesApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'TripsLuggage', id: trip.id }];
 				},
-				query: (trip) => {
+				query: ({name, parentId}) => {
 					return {
 						url: 'luggages',
 						method: 'POST',
 						body: {
-							tripId: trip.id,
-							title: faker.commerce.productName(),
+							parentId,
+							name,
 						},
 					};
 				},
@@ -72,5 +73,5 @@ export const {
 	useFetchLuggageQuery,
 	useAddLuggageMutation,
 	useRemoveLuggageMutation,
-} = luggagesApi;
-export { luggagesApi };
+} = luggageApi;
+export { luggageApi };

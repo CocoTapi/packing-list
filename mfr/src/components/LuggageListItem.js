@@ -17,7 +17,7 @@ function LuggageListItem({ luggage }) {
             <GoTrash />
           </Button>
           {results.error && <div>Error deleting luggage.</div>}
-          {luggage.title}
+          {luggage.name}
         </>
     ); 
 
