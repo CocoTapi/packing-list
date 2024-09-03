@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { SERVER_URL } from '../../App';
 
 // DEV ONLY!!!
 // const pause = (duration) => {
@@ -10,7 +11,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const luggageApi = createApi({
 	reducerPath: 'luggages',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://192.168.50.179:3005', //this must change if your IP changes
+		baseUrl: SERVER_URL, 
 		fetchFn: async (...args) => {
 			//REMOVE FOR PRODUCTION. ONLY FOR TEST
 			// await pause(1000); //removing this as we no longer want to simulate delays

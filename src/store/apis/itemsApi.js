@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { SERVER_URL } from '../../App';
 
 const itemsApi = createApi({
 	reducerPath: 'items',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://192.168.50.179:3005', //this must change if your IP changes
+		baseUrl: SERVER_URL
 	}),
 	endpoints(builder) {
 		return {

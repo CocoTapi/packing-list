@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { SERVER_URL } from '../../App';
 //import { faker } from '@faker-js/faker';
 
 // DEV ONLY!!!
@@ -11,7 +12,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 const tripsApi = createApi({
 	reducerPath: 'trips',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://192.168.50.179:3005', //this must change if your IP changes
+		baseUrl: SERVER_URL,
 		fetchFn: async (...args) => {
 			//REMOVE FOR PRODUCTION. ONLY FOR TEST
 			// await pause(1000); //removing this as we no longer want to simulate delays
@@ -22,6 +23,9 @@ const tripsApi = createApi({
 		return {
 			fetchTrips: builder.query({
 				providesTags: (result, error, trip) => {
+					if (!result) {
+						return [{ type: 'Trip' }]; // or return an empty array if no tags should be provided
+					}
 					const tags = result.map((trip) => {
 						return { type: 'Trip', id: trip.id };
 					});
