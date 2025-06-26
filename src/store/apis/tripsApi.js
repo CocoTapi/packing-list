@@ -56,7 +56,6 @@ const tripsApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'Trip', id: trip.id }];
 				},
-				// TODO: delete related luggage and item data too.
 				query: (trip) => {
 					return {
 						url: `/trips/${trip.id}`,
