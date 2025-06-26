@@ -22,7 +22,14 @@ function ItemsList ({ luggage }) {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      addItem({ name: newValue, luggageId: luggage.id, tripId: luggage.tripId });
+      const itemName = newValue.trim();
+
+      // validation for empty name 
+      if (itemName.length === 0) {
+        return;
+      }
+
+      addItem({ name: itemName, luggageId: luggage.id, tripId: luggage.tripId });
       setNewValue('');
   }
 

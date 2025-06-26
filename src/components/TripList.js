@@ -21,10 +21,14 @@ function TripList() {
 
   const handleSubmit = (event) => {
       event.preventDefault();
+      const tripName = newValue.trim();
 
-      // TODO: add validation for empty name 
+      // validation for empty name 
+      if (tripName.length === 0) {
+        return;
+      }
 
-      addTrip({ name: newValue });
+      addTrip({ name: tripName });
       setNewValue('');
   }
 
