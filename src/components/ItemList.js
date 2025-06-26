@@ -22,7 +22,7 @@ function ItemsList ({ luggage }) {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      addItem({ name: newValue, parentId: luggage.id });
+      addItem({ name: newValue, luggageId: luggage.id, tripId: luggage.tripId });
       setNewValue('');
   }
 

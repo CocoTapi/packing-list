@@ -30,11 +30,12 @@ const itemsApi = createApi({
 				invalidatesTags: (result, error, luggage) => {
 					return [{ type: 'LuggagesItem', id: luggage.id }];
 				},
-				query: ({name, luggageId}) => {
+				query: ({name, luggageId, tripId}) => {
 					return {
 						method: 'POST',
 						url: '/items',
 						body: {
+							tripId,
 							luggageId,
                             name
 						},

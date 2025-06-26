@@ -21,6 +21,9 @@ function TripList() {
 
   const handleSubmit = (event) => {
       event.preventDefault();
+
+      // TODO: add validation for empty name 
+
       addTrip({ name: newValue });
       setNewValue('');
   }
