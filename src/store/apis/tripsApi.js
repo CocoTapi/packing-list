@@ -23,7 +23,7 @@ const tripsApi = createApi({
 		return {
 			fetchTrips: builder.query({
 				providesTags: (result, error, trip) => {
-					if (!result) {
+					if (!result || result.length === 0) {
 						return [{ type: 'Trip' }]; // or return an empty array if no tags should be provided
 					}
 					const tags = result.map((trip) => {
@@ -56,6 +56,7 @@ const tripsApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'Trip', id: trip.id }];
 				},
+				// TODO: delete related luggage and item data too.
 				query: (trip) => {
 					return {
 						url: `/trips/${trip.id}`,
