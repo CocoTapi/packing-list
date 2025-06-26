@@ -25,7 +25,7 @@ function InputForm ({ onChange, newValue, onSubmit, placeholder, label }) {
                                 id="trip-form"
                             />
                         </div>
-                        <Button >Add</Button>
+                        <Button >Submit</Button>
                     </div>
                 </form>
             </div>
