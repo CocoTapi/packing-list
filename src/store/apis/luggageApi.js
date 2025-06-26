@@ -14,7 +14,7 @@ const luggageApi = createApi({
 		baseUrl: SERVER_URL, 
 		fetchFn: async (...args) => {
 			//REMOVE FOR PRODUCTION. ONLY FOR TEST
-			// await pause(1000); //removing this as we no longer want to simulate delays
+			// await pause(1000);
 			return fetch(...args);
 		},
 	}),
