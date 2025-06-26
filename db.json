@@ -1,5 +1,28 @@
 {
-  "trips": [],
-  "luggages": [],
-  "items": []
+  "trips": [
+    {
+      "name": "tokyo",
+      "id": 1
+    }
+  ],
+  "luggages": [
+    {
+      "tripId": 1,
+      "name": "bag",
+      "id": 1
+    },
+    {
+      "tripId": 1,
+      "name": "red",
+      "id": 2
+    }
+  ],
+  "items": [
+    {
+      "tripId": 1,
+      "luggageId": 1,
+      "name": "steal",
+      "id": 1
+    }
+  ]
 }

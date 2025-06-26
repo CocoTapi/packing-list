@@ -1,10 +1,10 @@
 import { useFetchLuggageQuery, useAddLuggageMutation } from "../store";
 import { GoPlus } from "react-icons/go";
-//import Skeleton from './Skeleton';
 import Button from './Button';
 import LuggageListItem from "./LuggageListItem";
 import { useState } from 'react';
 import InputForm from "./InputForm";
+import { LABEL_LUGGAGE } from "../constants";
 
 function LuggageList({ trip }) {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -52,7 +52,7 @@ function LuggageList({ trip }) {
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
       {isFormVisible && <InputForm
-        label="Luggage" 
+        label={LABEL_LUGGAGE} 
         onSubmit={handleSubmit} 
         onChange={handleNameChange} 
         newValue={newValue} 

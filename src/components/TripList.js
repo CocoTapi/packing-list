@@ -4,6 +4,7 @@ import Button from "./Button";
 import TripListItem from './TripListItem'
 import { useState } from 'react';
 import InputForm from "./InputForm";
+import { LABEL_TRIP } from "../constants";
 
 function TripList() {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -51,7 +52,7 @@ function TripList() {
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
       {isFormVisible && <InputForm
-        label="Trip" 
+        label={LABEL_TRIP} 
         onSubmit={handleSubmit} 
         onChange={handleNameChange} 
         newValue={newValue} 

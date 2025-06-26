@@ -5,6 +5,7 @@ import ItemListItem from "./ItemListItem";
 import { GoPlus } from "react-icons/go";
 import { useState } from "react";
 import InputForm from "./InputForm";
+import { LABEL_ITEM } from "../constants";
 
 function ItemsList ({ luggage }) {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -53,7 +54,7 @@ function ItemsList ({ luggage }) {
                 </Button>
             </div>
             {isFormVisible && <InputForm 
-                label="Item"
+                label={LABEL_ITEM}
                 onSubmit={handleSubmit} 
                 onChange={handleNameChange} 
                 newValue={newValue} 

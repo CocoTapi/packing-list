@@ -1,10 +1,18 @@
+import { ITEM_BG_COLOR, LABEL_ITEM, LABEL_LUGGAGE, LUGGAGE_BG_COLOR, TRIP_BG_COLOR } from "../constants";
 import Button from "./Button";
 
 
 function InputForm ({ onChange, newValue, onSubmit, placeholder, label }) {
+    let bgColor = TRIP_BG_COLOR;
+
+    if (label === LABEL_LUGGAGE) {
+        bgColor = LUGGAGE_BG_COLOR;
+    } else if (label === LABEL_ITEM) {
+        bgColor = ITEM_BG_COLOR;
+    }
      return (
         <div className="mb-2 border rounded">
-            <div className="bg-amber-200">
+            <div className={bgColor}>
                 <form onSubmit={onSubmit}>
                     <div className="p-2 m-2 flex flex-row items-center justify-between">
                         <div>
