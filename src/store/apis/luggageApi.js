@@ -34,7 +34,7 @@ const luggageApi = createApi({
 					return {
 						url: '/luggages',
 						params: {
-							parentId: trip.id,
+							tripId: trip.id,
 						},
 						method: 'GET',
 					};
@@ -44,12 +44,12 @@ const luggageApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'TripsLuggage', id: trip.id }];
 				},
-				query: ({name, parentId}) => {
+				query: ({name, tripId}) => {
 					return {
 						url: 'luggages',
 						method: 'POST',
 						body: {
-							parentId,
+							tripId,
 							name,
 						},
 					};
