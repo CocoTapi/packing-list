@@ -1,4 +1,4 @@
-# 🧑‍💻 Packing List App
+# Packing List App
 
 A simple and structured web app to help travelers organize their trips, luggage, and items efficiently.
 
@@ -7,10 +7,14 @@ A simple and structured web app to help travelers organize their trips, luggage,
 - **Frontend:** JavaScript, React, Redux Toolkit, HTML5, Tailwind CSS
 - **Backend:** json-server (mock backend)
 
-## 🧩 Features
+## Features
 
 - Register multiple trips
-- Add different types of luggage per trip
+- Add/remove different types of luggage per trip, items per luggage
 - Track items stored in each piece of luggage
 - Clear visual hierarchy of trips → luggage → items
 - Backend simulated using json-server and RESTful API patterns
+
+## demo
+
+![App Demo](./assets/demo.gif)
