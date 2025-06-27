@@ -15,6 +15,6 @@ A simple and structured web app to help travelers organize their trips, luggage,
 - Clear visual hierarchy of trips → luggage → items
 - Backend simulated using json-server and RESTful API patterns
 
-## demo
+## Demo
 
 ![App Demo](./assets/demo.gif)
