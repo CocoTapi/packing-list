@@ -5,6 +5,7 @@ import ItemListItem from "./ItemListItem";
 import { GoPlus } from "react-icons/go";
 import { useState } from "react";
 import InputForm from "./InputForm";
+import { LABEL_ITEM } from "../constants";
 
 function ItemsList ({ luggage }) {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -22,7 +23,14 @@ function ItemsList ({ luggage }) {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      addItem({ name: newValue, parentId: luggage.id });
+      const itemName = newValue.trim();
+
+      // validation for empty name 
+      if (itemName.length === 0) {
+        return;
+      }
+
+      addItem({ name: itemName, luggageId: luggage.id, tripId: luggage.tripId });
       setNewValue('');
   }
 
@@ -39,14 +47,14 @@ function ItemsList ({ luggage }) {
 
     return (
         <div>
-            <div className="m-2 flex flex-row items-center juctify-between">
+            <div className="m-2 flex flex-row items-center justify-between">
                 <h3 className="text-lg font-bold">Items In {luggage.name}</h3>
                 <Button onClick={handleShowForm}>
                     <GoPlus />
                 </Button>
             </div>
             {isFormVisible && <InputForm 
-                label="Item"
+                label={LABEL_ITEM}
                 onSubmit={handleSubmit} 
                 onChange={handleNameChange} 
                 newValue={newValue} 

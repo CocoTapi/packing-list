@@ -14,7 +14,7 @@ const luggageApi = createApi({
 		baseUrl: SERVER_URL, 
 		fetchFn: async (...args) => {
 			//REMOVE FOR PRODUCTION. ONLY FOR TEST
-			// await pause(1000); //removing this as we no longer want to simulate delays
+			// await pause(1000);
 			return fetch(...args);
 		},
 	}),
@@ -22,7 +22,6 @@ const luggageApi = createApi({
 		return {
 			fetchLuggage: builder.query({
 				providesTags: (result, error, trip) => {
-					//console.log(result);
 					const tags = result.map((luggage) => {
 						return { type: 'Luggage', id: luggage.id };
 					});
@@ -30,11 +29,10 @@ const luggageApi = createApi({
 					return tags;
 				},
 				query: (trip) => {
-					//console.log(trip);
 					return {
 						url: '/luggages',
 						params: {
-							parentId: trip.id,
+							tripId: trip.id,
 						},
 						method: 'GET',
 					};
@@ -44,12 +42,12 @@ const luggageApi = createApi({
 				invalidatesTags: (result, error, trip) => {
 					return [{ type: 'TripsLuggage', id: trip.id }];
 				},
-				query: ({name, parentId}) => {
+				query: ({name, tripId}) => {
 					return {
 						url: 'luggages',
 						method: 'POST',
 						body: {
-							parentId,
+							tripId,
 							name,
 						},
 					};

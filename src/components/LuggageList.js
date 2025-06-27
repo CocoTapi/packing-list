@@ -1,10 +1,10 @@
 import { useFetchLuggageQuery, useAddLuggageMutation } from "../store";
 import { GoPlus } from "react-icons/go";
-//import Skeleton from './Skeleton';
 import Button from './Button';
 import LuggageListItem from "./LuggageListItem";
 import { useState } from 'react';
 import InputForm from "./InputForm";
+import { LABEL_LUGGAGE } from "../constants";
 
 function LuggageList({ trip }) {
   const [isFormVisible, setFormVisible] = useState(false);
@@ -22,7 +22,14 @@ function LuggageList({ trip }) {
 
   const handleSubmit = (event) => {
       event.preventDefault();
-      addLuggage({ name: newValue, parentId: trip.id });
+      const luggageName = newValue.trim() ;
+      
+      // validation for empty name 
+      if (luggageName.length === 0) {
+        return;
+      }
+
+      addLuggage({ name: luggageName, tripId: trip.id });
       setNewValue('');
   }
 
@@ -45,7 +52,7 @@ function LuggageList({ trip }) {
         <Button onClick={handleShowForm}><GoPlus /></Button>
       </div>
       {isFormVisible && <InputForm
-        label="Luggage" 
+        label={LABEL_LUGGAGE} 
         onSubmit={handleSubmit} 
         onChange={handleNameChange} 
         newValue={newValue} 
