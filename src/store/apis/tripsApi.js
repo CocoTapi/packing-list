@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { SERVER_URL } from '../../App';
-//import { faker } from '@faker-js/faker';
 
 // DEV ONLY!!!
 // const pause = (duration) => {
